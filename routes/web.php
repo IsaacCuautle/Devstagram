@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('principal');
 });
-Route::get('/tienda', function () {
-    return view('tienda');
-});
-Route::get('/nosotros', function () {
-    return view('nosotros');
-});
+
+// Atuh 
+Route::get('/crear-cuenta', [RegisterController::class, 'index']);
+
+Route::get('/autenticar', [RegisterController::class, 'autenticar']);
+
